@@ -1,2 +1,3 @@
 Mi primera línea de texto...
-Mi segunda línea - trabajando en una feature
+Mi segunda línea - trabajando en una feature.
+Mi tercera línea - trabajando en una feature nuevo
