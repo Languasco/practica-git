@@ -2,4 +2,8 @@ Mi primera línea de texto...
 Mi segunda línea - trabajando en una feature.
 Mi tercera línea - trabajando en una feature nuevo
 el login presenta error en el token no se refresca correctamente..
+--------+++ FORMULARIO REGISTRO+++--------------
+realizar el crud completo 
+al registrar redireccionar directamente al login
+------------------------------------------------
 
