@@ -1,0 +1,26 @@
+1. Estructura y Diseño (UI/UX)Diseña un formulario claro que incluya campos para el correo electrónico (o nombre de usuario) y la contraseña, 
+un botón de envío y enlaces para recuperación de cuenta.Seguridad visual: Oculta los caracteres de la contraseña y añade un botón para alternar su visibilidad. 
+Accesibilidad: Usa etiquetas (<label>) vinculadas a los inputs y asegura una correcta navegación por teclado.
+2. Manejo de Estado (Variables Locales)
+Utiliza el sistema de gestión de estado de tu framework (como useState en React, ref en Vue.js, o ngModel en Angular) para capturar y almacenar temporalmente lo que el usuario escribe.
+3. Validación de Datos (Frontend) Antes de enviar los datos a la red, realiza una validación básica en el navegador para mejorar la experiencia de usuario y ahorrar peticiones innecesarias.
+Verifica que los campos no estén vacíos.Comprueba que el email tenga un formato válido mediante expresiones regulares (regex).
+4. Petición a la API (Backend) Al enviar el formulario, intercepta el evento (evitando el refresco de página por defecto) y realiza una petición HTTP asíncrona (POST) al servidor.
+Usa herramientas nativas como fetch() o bibliotecas como Axios.Muestra un estado de "Cargando" (loading) y deshabilita el botón de inicio de sesión para evitar múltiples clics accidentales.
+5. Almacenamiento del Token de AutenticaciónSi las credenciales son correctas, el servidor te devolverá un token de autenticación (generalmente un JSON Web Token o JWT).
+ Debes guardarlo de forma segura:Guárdalo en el localStorage o sessionStorage si es necesario para mantener la sesión activa entre pestañas.
+ Configura tus peticiones HTTP (como las de Axios) para incluir este token en el encabezado Authorization: Bearer <token> en todas las llamadas posteriores.
+6. Redirección y Gestión de ErroresSi es exitoso: Redirige al usuario a la página principal o al panel de control (dashboard) usando el enrutador de tu aplicación (ej. react-router, vue-router).
+ Si hay error: Captura la respuesta del servidor (ej. credenciales incorrectas) y muestra un mensaje de error claro, amigable y temporal en la interfaz.
+
+
+
+Un formulario de login eficaz debe ser rápido, seguro y fácil de usar. 
+Solicite solo el correo/usuario y la contraseña, permita la función de autocompletar para facilitar el acceso, 
+oculte los caracteres de la contraseña con un botón para hacerla visible y evite bloquear el pegado de texto.A continuación, 
+se detallan las recomendaciones clave para optimizar su diseño y funcionalidad:Minimalismo: Solicite únicamente el nombre de usuario (o correo electrónico) y la contraseña. 
+Evite distracciones innecesarias o enlaces redundantes dentro del mismo recuadro de inicio.Autocompletar y gestores de contraseñas: Los navegadores actuales guardan las credenciales.
+Utilice los atributos correctos en el código para permitir que los administradores de contraseñas autocompleten los campos sin problemas.
+Visibilidad de la contraseña: Incorpore un icono (como un ojo) para que el usuario pueda alternar entre ocultar y mostrar el texto de la contraseña, lo que reduce los errores de tipeo.
+Alternativas sociales: Integre opciones de inicio de sesión rápido con plataformas como Google, Facebook o Apple para reducir la fricción.
+Diseño receptivo: El formulario debe estar alineado en una sola columna y verse correctamente tanto en pantallas de escritorio como en dispositivos móviles.
